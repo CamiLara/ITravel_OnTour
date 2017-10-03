@@ -1,0 +1,1068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACTIVIDAD">
+          <Key>
+            <PropertyRef Name="IDACTIVIDAD" />
+          </Key>
+          <Property Name="IDACTIVIDAD" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CURSO_IDCURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPOACTIVIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACTIVIDADAPORTES">
+          <Key>
+            <PropertyRef Name="ACTIVIDAD" />
+            <PropertyRef Name="CUENTAALUMNOS" />
+            <PropertyRef Name="APORTE" />
+          </Key>
+          <Property Name="ACTIVIDAD" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CUENTAALUMNOS" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MONTO" Type="number" Precision="38" Scale="0" />
+          <Property Name="APORTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACTIVIDADVIAJE">
+          <Key>
+            <PropertyRef Name="IDACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="IDACTIVIDADVIAJE" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+          <Property Name="FECHAINICIO" Type="date" />
+          <Property Name="FECHATERMINO" Type="date" />
+          <Property Name="TIPOACTIVIDADVIAJE" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##PABLO.ALUMNO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ALUMNO">
+          <Key>
+            <PropertyRef Name="IDALUMNO" />
+            <PropertyRef Name="APODERADO" />
+            <PropertyRef Name="CORREOELECTRONICO" />
+            <PropertyRef Name="CURSO" />
+          </Key>
+          <Property Name="IDALUMNO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="200" />
+          <Property Name="APODERADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+          <Property Name="CORREOELECTRONICO" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="CURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ANEXOS">
+          <Key>
+            <PropertyRef Name="IDANEXO" />
+          </Key>
+          <Property Name="IDANEXO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="File" Type="varchar2" MaxLength="300" Nullable="false" />
+          <Property Name="CONTRATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TOKEN" Type="varchar2" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="APODERADO">
+          <Key>
+            <PropertyRef Name="IDAPODERADO" />
+          </Key>
+          <Property Name="IDAPODERADO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="RUT" Type="varchar2" MaxLength="15" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="200" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+          <Property Name="CELULAR" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ASEGURADORA">
+          <Key>
+            <PropertyRef Name="IDASEGURADORA" />
+          </Key>
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="200" />
+          <Property Name="IDASEGURADORA" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COLEGIO">
+          <Key>
+            <PropertyRef Name="IDCOLEGIO" />
+          </Key>
+          <Property Name="IDCOLEGIO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="200" />
+          <Property Name="TELEFONO" Type="number" Precision="38" Scale="0" />
+          <Property Name="COMUNA_IDCOMUNA" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMUNA">
+          <Key>
+            <PropertyRef Name="IDCOMUNA" />
+          </Key>
+          <Property Name="IDCOMUNA" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+          <Property Name="REGION" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="IDCONTRATO" />
+          </Key>
+          <Property Name="IDCONTRATO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPOCONTRATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VENDEDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAINICIO" Type="date" />
+          <Property Name="FECHATERMINO" Type="date" />
+          <Property Name="ALUMNO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="GARANTIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUENTA">
+          <Key>
+            <PropertyRef Name="IDCUENTA" />
+          </Key>
+          <Property Name="IDCUENTA" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONEXION" Type="nvarchar2" MaxLength="40" Nullable="false" />
+          <Property Name="CONTRASENA" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NOMBRE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="APELLIDO" Type="varchar2" MaxLength="100" />
+          <Property Name="CORREOELECTRONICO" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CUENTAALUMNO">
+          <Key>
+            <PropertyRef Name="IDCUENTAALUMNOS" />
+          </Key>
+          <Property Name="IDCUENTAALUMNOS" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUPOTOTAL" Type="number" Precision="38" Scale="0" />
+          <Property Name="CUPOUTILIZADO" Type="number" Precision="38" Scale="0" />
+          <Property Name="TIPOCUENTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ALUMNO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="APORTE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALDO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CUENTACURSO">
+          <Key>
+            <PropertyRef Name="IDCUENTACURSO" />
+          </Key>
+          <Property Name="IDCUENTACURSO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALDO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CURSO">
+          <Key>
+            <PropertyRef Name="IDCURSO" />
+          </Key>
+          <Property Name="IDCURSO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="COLEGIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DESTINO">
+          <Key>
+            <PropertyRef Name="IDDESTINO" />
+          </Key>
+          <Property Name="IDDESTINO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="PAIS" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADOCUENTA">
+          <Key>
+            <PropertyRef Name="IDESTADOCUENTA" />
+          </Key>
+          <Property Name="IDESTADOCUENTA" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUENTAALUMNO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DETALLE" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ITINERARIO">
+          <Key>
+            <PropertyRef Name="DESTINO" />
+            <PropertyRef Name="ORIGEN" />
+            <PropertyRef Name="ACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="DESTINO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORIGEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACTIVIDADVIAJE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAINICIO" Type="date" />
+          <Property Name="FECHATERMINO" Type="date" />
+          <Property Name="CONTRATO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORIGEN">
+          <Key>
+            <PropertyRef Name="IDORIGEN" />
+          </Key>
+          <Property Name="IDORIGEN" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAIS" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAGO">
+          <Key>
+            <PropertyRef Name="IDPAGO" />
+          </Key>
+          <Property Name="IDPAGO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CUENTACURSO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAPAGO" Type="date" />
+          <Property Name="DETALLE" Type="varchar2" MaxLength="200" />
+          <Property Name="MONTOCANCELADO" Type="varchar2" MaxLength="200" />
+          <Property Name="TIPOPAGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CUENTAALUMNO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAIS">
+          <Key>
+            <PropertyRef Name="IDPAIS" />
+          </Key>
+          <Property Name="IDPAIS" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##PABLO.PERFIL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PERFIL">
+          <Key>
+            <PropertyRef Name="IDPERFIL" />
+          </Key>
+          <Property Name="IDPERFIL" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+          <Property Name="ESTADO" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PERMISO">
+          <Key>
+            <PropertyRef Name="IDPERMISO" />
+          </Key>
+          <Property Name="IDPERMISO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+          <Property Name="PERFIL" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##PABLO.POLIZASEGURO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="POLIZASEGURO">
+          <Key>
+            <PropertyRef Name="IDPOLIZASEGURO" />
+            <PropertyRef Name="TIPOSEGURO" />
+            <PropertyRef Name="ASEGURADORA" />
+            <PropertyRef Name="ALUMNO" />
+          </Key>
+          <Property Name="IDPOLIZASEGURO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="number" Precision="38" Scale="0" />
+          <Property Name="TIPOSEGURO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ASEGURADORA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ALUMNO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VIGENCIAINICIO" Type="date" />
+          <Property Name="VIGENCIATERMINO" Type="date" />
+          <Property Name="FECHACONTRATACION" Type="date" />
+          <Property Name="MONTOASEGURADO" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="REGION">
+          <Key>
+            <PropertyRef Name="IDREGION" />
+          </Key>
+          <Property Name="IDREGION" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="PAIS" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICIO">
+          <Key>
+            <PropertyRef Name="IDSERVICIO" />
+          </Key>
+          <Property Name="IDSERVICIO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPOSERVICIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOACTIVIDAD">
+          <Key>
+            <PropertyRef Name="IDTIPOACTIVIDAD" />
+          </Key>
+          <Property Name="IDTIPOACTIVIDAD" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TIPOACTIVIDADVIAJE">
+          <Key>
+            <PropertyRef Name="IDTIPOACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="IDTIPOACTIVIDADVIAJE" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TIPOCONTRATO">
+          <Key>
+            <PropertyRef Name="IDTIPOCONTRATO" />
+          </Key>
+          <Property Name="IDTIPOCONTRATO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOCUENTA">
+          <Key>
+            <PropertyRef Name="IDTIPOCUENTA" />
+          </Key>
+          <Property Name="IDTIPOCUENTA" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TIPOPAGO">
+          <Key>
+            <PropertyRef Name="IDTIPOPAGO" />
+          </Key>
+          <Property Name="IDTIPOPAGO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TIPOSEGURO">
+          <Key>
+            <PropertyRef Name="IDTIPOSEGURO" />
+          </Key>
+          <Property Name="IDTIPOSEGURO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##PABLO.TIPOSERVICIO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TIPOSERVICIO">
+          <Key>
+            <PropertyRef Name="IDTIPOSERVICIO" />
+          </Key>
+          <Property Name="IDTIPOSERVICIO" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="200" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ACTIVIDAD" EntityType="Self.ACTIVIDAD" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ACTIVIDADAPORTES" EntityType="Self.ACTIVIDADAPORTES" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ACTIVIDADVIAJE" EntityType="Self.ACTIVIDADVIAJE" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ANEXOS" EntityType="Self.ANEXOS" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="APODERADO" EntityType="Self.APODERADO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ASEGURADORA" EntityType="Self.ASEGURADORA" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="COLEGIO" EntityType="Self.COLEGIO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="COMUNA" EntityType="Self.COMUNA" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="CUENTA" EntityType="Self.CUENTA" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="CUENTAALUMNO" EntityType="Self.CUENTAALUMNO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="CUENTACURSO" EntityType="Self.CUENTACURSO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="CURSO" EntityType="Self.CURSO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="DESTINO" EntityType="Self.DESTINO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ESTADOCUENTA" EntityType="Self.ESTADOCUENTA" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ITINERARIO" EntityType="Self.ITINERARIO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ORIGEN" EntityType="Self.ORIGEN" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="PAGO" EntityType="Self.PAGO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="PAIS" EntityType="Self.PAIS" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="PERMISO" EntityType="Self.PERMISO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="REGION" EntityType="Self.REGION" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOACTIVIDAD" EntityType="Self.TIPOACTIVIDAD" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOACTIVIDADVIAJE" EntityType="Self.TIPOACTIVIDADVIAJE" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOCONTRATO" EntityType="Self.TIPOCONTRATO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOCUENTA" EntityType="Self.TIPOCUENTA" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOPAGO" EntityType="Self.TIPOPAGO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="TIPOSEGURO" EntityType="Self.TIPOSEGURO" Schema="C##PABLO" store:Type="Tables" />
+          <EntitySet Name="ALUMNO" EntityType="Self.ALUMNO" store:Type="Tables" store:Schema="C##PABLO">
+            <DefiningQuery>SELECT 
+"ALUMNO"."IDALUMNO" AS "IDALUMNO", 
+"ALUMNO"."NOMBRE" AS "NOMBRE", 
+"ALUMNO"."DIRECCION" AS "DIRECCION", 
+"ALUMNO"."APODERADO" AS "APODERADO", 
+"ALUMNO"."TELEFONO" AS "TELEFONO", 
+"ALUMNO"."CORREOELECTRONICO" AS "CORREOELECTRONICO", 
+"ALUMNO"."CURSO" AS "CURSO"
+FROM "C##PABLO"."ALUMNO" "ALUMNO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PERFIL" EntityType="Self.PERFIL" store:Type="Tables" store:Schema="C##PABLO">
+            <DefiningQuery>SELECT 
+"PERFIL"."IDPERFIL" AS "IDPERFIL", 
+"PERFIL"."DESCRIPCION" AS "DESCRIPCION", 
+"PERFIL"."ESTADO" AS "ESTADO"
+FROM "C##PABLO"."PERFIL" "PERFIL"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="POLIZASEGURO" EntityType="Self.POLIZASEGURO" store:Type="Tables" store:Schema="C##PABLO">
+            <DefiningQuery>SELECT 
+"POLIZASEGURO"."IDPOLIZASEGURO" AS "IDPOLIZASEGURO", 
+"POLIZASEGURO"."DESCRIPCION" AS "DESCRIPCION", 
+"POLIZASEGURO"."TIPOSEGURO" AS "TIPOSEGURO", 
+"POLIZASEGURO"."ASEGURADORA" AS "ASEGURADORA", 
+"POLIZASEGURO"."ALUMNO" AS "ALUMNO", 
+"POLIZASEGURO"."VIGENCIAINICIO" AS "VIGENCIAINICIO", 
+"POLIZASEGURO"."VIGENCIATERMINO" AS "VIGENCIATERMINO", 
+"POLIZASEGURO"."FECHACONTRATACION" AS "FECHACONTRATACION", 
+"POLIZASEGURO"."MONTOASEGURADO" AS "MONTOASEGURADO"
+FROM "C##PABLO"."POLIZASEGURO" "POLIZASEGURO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TIPOSERVICIO" EntityType="Self.TIPOSERVICIO" store:Type="Tables" store:Schema="C##PABLO">
+            <DefiningQuery>SELECT 
+"TIPOSERVICIO"."IDTIPOSERVICIO" AS "IDTIPOSERVICIO", 
+"TIPOSERVICIO"."NOMBRE" AS "NOMBRE", 
+"TIPOSERVICIO"."DESCRIPCION" AS "DESCRIPCION"
+FROM "C##PABLO"."TIPOSERVICIO" "TIPOSERVICIO"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACTIVIDAD">
+          <Key>
+            <PropertyRef Name="IDACTIVIDAD" />
+          </Key>
+          <Property Name="IDACTIVIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CURSO_IDCURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIPOACTIVIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACTIVIDADAPORTES">
+          <Key>
+            <PropertyRef Name="ACTIVIDAD" />
+            <PropertyRef Name="CUENTAALUMNOS" />
+            <PropertyRef Name="APORTE" />
+          </Key>
+          <Property Name="ACTIVIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CUENTAALUMNOS" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MONTO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APORTE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACTIVIDADVIAJE">
+          <Key>
+            <PropertyRef Name="IDACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="IDACTIVIDADVIAJE" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FECHAINICIO" Type="DateTime" />
+          <Property Name="FECHATERMINO" Type="DateTime" />
+          <Property Name="TIPOACTIVIDADVIAJE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ANEXOS">
+          <Key>
+            <PropertyRef Name="IDANEXO" />
+          </Key>
+          <Property Name="IDANEXO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="File" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRATO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TOKEN" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="APODERADO">
+          <Key>
+            <PropertyRef Name="IDAPODERADO" />
+          </Key>
+          <Property Name="IDAPODERADO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RUT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ASEGURADORA">
+          <Key>
+            <PropertyRef Name="IDASEGURADORA" />
+          </Key>
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IDASEGURADORA" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="COLEGIO">
+          <Key>
+            <PropertyRef Name="IDCOLEGIO" />
+          </Key>
+          <Property Name="IDCOLEGIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMUNA_IDCOMUNA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMUNA">
+          <Key>
+            <PropertyRef Name="IDCOMUNA" />
+          </Key>
+          <Property Name="IDCOMUNA" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="REGION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="IDCONTRATO" />
+          </Key>
+          <Property Name="IDCONTRATO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPOCONTRATO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VENDEDOR" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAINICIO" Type="DateTime" />
+          <Property Name="FECHATERMINO" Type="DateTime" />
+          <Property Name="ALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="GARANTIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUENTA">
+          <Key>
+            <PropertyRef Name="IDCUENTA" />
+          </Key>
+          <Property Name="IDCUENTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONEXION" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CONTRASENA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CORREOELECTRONICO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CUENTAALUMNO">
+          <Key>
+            <PropertyRef Name="IDCUENTAALUMNOS" />
+          </Key>
+          <Property Name="IDCUENTAALUMNOS" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUPOTOTAL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CUPOUTILIZADO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TIPOCUENTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="APORTE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALDO" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CUENTACURSO">
+          <Key>
+            <PropertyRef Name="IDCUENTACURSO" />
+          </Key>
+          <Property Name="IDCUENTACURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SALDO" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CURSO">
+          <Key>
+            <PropertyRef Name="IDCURSO" />
+          </Key>
+          <Property Name="IDCURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COLEGIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DESTINO">
+          <Key>
+            <PropertyRef Name="IDDESTINO" />
+          </Key>
+          <Property Name="IDDESTINO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAIS" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADOCUENTA">
+          <Key>
+            <PropertyRef Name="IDESTADOCUENTA" />
+          </Key>
+          <Property Name="IDESTADOCUENTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUENTAALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DETALLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ITINERARIO">
+          <Key>
+            <PropertyRef Name="DESTINO" />
+            <PropertyRef Name="ORIGEN" />
+            <PropertyRef Name="ACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="DESTINO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORIGEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACTIVIDADVIAJE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAINICIO" Type="DateTime" />
+          <Property Name="FECHATERMINO" Type="DateTime" />
+          <Property Name="CONTRATO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORIGEN">
+          <Key>
+            <PropertyRef Name="IDORIGEN" />
+          </Key>
+          <Property Name="IDORIGEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAIS" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAGO">
+          <Key>
+            <PropertyRef Name="IDPAGO" />
+          </Key>
+          <Property Name="IDPAGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUENTACURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHAPAGO" Type="DateTime" />
+          <Property Name="DETALLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MONTOCANCELADO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TIPOPAGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CUENTAALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAIS">
+          <Key>
+            <PropertyRef Name="IDPAIS" />
+          </Key>
+          <Property Name="IDPAIS" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PERMISO">
+          <Key>
+            <PropertyRef Name="IDPERMISO" />
+          </Key>
+          <Property Name="IDPERMISO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PERFIL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REGION">
+          <Key>
+            <PropertyRef Name="IDREGION" />
+          </Key>
+          <Property Name="IDREGION" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAIS" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICIO">
+          <Key>
+            <PropertyRef Name="IDSERVICIO" />
+          </Key>
+          <Property Name="IDSERVICIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPOSERVICIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOACTIVIDAD">
+          <Key>
+            <PropertyRef Name="IDTIPOACTIVIDAD" />
+          </Key>
+          <Property Name="IDTIPOACTIVIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPOACTIVIDADVIAJE">
+          <Key>
+            <PropertyRef Name="IDTIPOACTIVIDADVIAJE" />
+          </Key>
+          <Property Name="IDTIPOACTIVIDADVIAJE" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPOCONTRATO">
+          <Key>
+            <PropertyRef Name="IDTIPOCONTRATO" />
+          </Key>
+          <Property Name="IDTIPOCONTRATO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPOCUENTA">
+          <Key>
+            <PropertyRef Name="IDTIPOCUENTA" />
+          </Key>
+          <Property Name="IDTIPOCUENTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPOPAGO">
+          <Key>
+            <PropertyRef Name="IDTIPOPAGO" />
+          </Key>
+          <Property Name="IDTIPOPAGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPOSEGURO">
+          <Key>
+            <PropertyRef Name="IDTIPOSEGURO" />
+          </Key>
+          <Property Name="IDTIPOSEGURO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ALUMNO">
+          <Key>
+            <PropertyRef Name="IDALUMNO" />
+            <PropertyRef Name="APODERADO" />
+            <PropertyRef Name="CORREOELECTRONICO" />
+            <PropertyRef Name="CURSO" />
+          </Key>
+          <Property Name="IDALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="APODERADO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TELEFONO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CORREOELECTRONICO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CURSO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERFIL">
+          <Key>
+            <PropertyRef Name="IDPERFIL" />
+          </Key>
+          <Property Name="IDPERFIL" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="POLIZASEGURO">
+          <Key>
+            <PropertyRef Name="IDPOLIZASEGURO" />
+            <PropertyRef Name="TIPOSEGURO" />
+            <PropertyRef Name="ASEGURADORA" />
+            <PropertyRef Name="ALUMNO" />
+          </Key>
+          <Property Name="IDPOLIZASEGURO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TIPOSEGURO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ASEGURADORA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ALUMNO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VIGENCIAINICIO" Type="DateTime" />
+          <Property Name="VIGENCIATERMINO" Type="DateTime" />
+          <Property Name="FECHACONTRATACION" Type="DateTime" />
+          <Property Name="MONTOASEGURADO" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="TIPOSERVICIO">
+          <Key>
+            <PropertyRef Name="IDTIPOSERVICIO" />
+          </Key>
+          <Property Name="IDTIPOSERVICIO" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="OnTour_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTIVIDAD" EntityType="Self.ACTIVIDAD" />
+          <EntitySet Name="ACTIVIDADAPORTES" EntityType="Self.ACTIVIDADAPORTES" />
+          <EntitySet Name="ACTIVIDADVIAJE" EntityType="Self.ACTIVIDADVIAJE" />
+          <EntitySet Name="ANEXOS" EntityType="Self.ANEXOS" />
+          <EntitySet Name="APODERADO" EntityType="Self.APODERADO" />
+          <EntitySet Name="ASEGURADORA" EntityType="Self.ASEGURADORA" />
+          <EntitySet Name="COLEGIO" EntityType="Self.COLEGIO" />
+          <EntitySet Name="COMUNA" EntityType="Self.COMUNA" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" />
+          <EntitySet Name="CUENTA" EntityType="Self.CUENTA" />
+          <EntitySet Name="CUENTAALUMNO" EntityType="Self.CUENTAALUMNO" />
+          <EntitySet Name="CUENTACURSO" EntityType="Self.CUENTACURSO" />
+          <EntitySet Name="CURSO" EntityType="Self.CURSO" />
+          <EntitySet Name="DESTINO" EntityType="Self.DESTINO" />
+          <EntitySet Name="ESTADOCUENTA" EntityType="Self.ESTADOCUENTA" />
+          <EntitySet Name="ITINERARIO" EntityType="Self.ITINERARIO" />
+          <EntitySet Name="ORIGEN" EntityType="Self.ORIGEN" />
+          <EntitySet Name="PAGO" EntityType="Self.PAGO" />
+          <EntitySet Name="PAIS" EntityType="Self.PAIS" />
+          <EntitySet Name="PERMISO" EntityType="Self.PERMISO" />
+          <EntitySet Name="REGION" EntityType="Self.REGION" />
+          <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" />
+          <EntitySet Name="TIPOACTIVIDAD" EntityType="Self.TIPOACTIVIDAD" />
+          <EntitySet Name="TIPOACTIVIDADVIAJE" EntityType="Self.TIPOACTIVIDADVIAJE" />
+          <EntitySet Name="TIPOCONTRATO" EntityType="Self.TIPOCONTRATO" />
+          <EntitySet Name="TIPOCUENTA" EntityType="Self.TIPOCUENTA" />
+          <EntitySet Name="TIPOPAGO" EntityType="Self.TIPOPAGO" />
+          <EntitySet Name="TIPOSEGURO" EntityType="Self.TIPOSEGURO" />
+          <EntitySet Name="ALUMNO" EntityType="Self.ALUMNO" />
+          <EntitySet Name="PERFIL" EntityType="Self.PERFIL" />
+          <EntitySet Name="POLIZASEGURO" EntityType="Self.POLIZASEGURO" />
+          <EntitySet Name="TIPOSERVICIO" EntityType="Self.TIPOSERVICIO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="OnTour_Entities">
+          <EntitySetMapping Name="ACTIVIDAD">
+            <EntityTypeMapping TypeName="Model.ACTIVIDAD">
+              <MappingFragment StoreEntitySet="ACTIVIDAD">
+                <ScalarProperty Name="IDACTIVIDAD" ColumnName="IDACTIVIDAD" />
+                <ScalarProperty Name="CURSO_IDCURSO" ColumnName="CURSO_IDCURSO" />
+                <ScalarProperty Name="TIPOACTIVIDAD" ColumnName="TIPOACTIVIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACTIVIDADAPORTES">
+            <EntityTypeMapping TypeName="Model.ACTIVIDADAPORTES">
+              <MappingFragment StoreEntitySet="ACTIVIDADAPORTES">
+                <ScalarProperty Name="ACTIVIDAD" ColumnName="ACTIVIDAD" />
+                <ScalarProperty Name="CUENTAALUMNOS" ColumnName="CUENTAALUMNOS" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+                <ScalarProperty Name="APORTE" ColumnName="APORTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACTIVIDADVIAJE">
+            <EntityTypeMapping TypeName="Model.ACTIVIDADVIAJE">
+              <MappingFragment StoreEntitySet="ACTIVIDADVIAJE">
+                <ScalarProperty Name="IDACTIVIDADVIAJE" ColumnName="IDACTIVIDADVIAJE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
+                <ScalarProperty Name="FECHATERMINO" ColumnName="FECHATERMINO" />
+                <ScalarProperty Name="TIPOACTIVIDADVIAJE" ColumnName="TIPOACTIVIDADVIAJE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANEXOS">
+            <EntityTypeMapping TypeName="Model.ANEXOS">
+              <MappingFragment StoreEntitySet="ANEXOS">
+                <ScalarProperty Name="IDANEXO" ColumnName="IDANEXO" />
+                <ScalarProperty Name="File" ColumnName="File" />
+                <ScalarProperty Name="CONTRATO" ColumnName="CONTRATO" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APODERADO">
+            <EntityTypeMapping TypeName="Model.APODERADO">
+              <MappingFragment StoreEntitySet="APODERADO">
+                <ScalarProperty Name="IDAPODERADO" ColumnName="IDAPODERADO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ASEGURADORA">
+            <EntityTypeMapping TypeName="Model.ASEGURADORA">
+              <MappingFragment StoreEntitySet="ASEGURADORA">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="IDASEGURADORA" ColumnName="IDASEGURADORA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COLEGIO">
+            <EntityTypeMapping TypeName="Model.COLEGIO">
+              <MappingFragment StoreEntitySet="COLEGIO">
+                <ScalarProperty Name="IDCOLEGIO" ColumnName="IDCOLEGIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="COMUNA_IDCOMUNA" ColumnName="COMUNA_IDCOMUNA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMUNA">
+            <EntityTypeMapping TypeName="Model.COMUNA">
+              <MappingFragment StoreEntitySet="COMUNA">
+                <ScalarProperty Name="IDCOMUNA" ColumnName="IDCOMUNA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTRATO">
+            <EntityTypeMapping TypeName="Model.CONTRATO">
+              <MappingFragment StoreEntitySet="CONTRATO">
+                <ScalarProperty Name="IDCONTRATO" ColumnName="IDCONTRATO" />
+                <ScalarProperty Name="TIPOCONTRATO" ColumnName="TIPOCONTRATO" />
+                <ScalarProperty Name="VENDEDOR" ColumnName="VENDEDOR" />
+                <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
+                <ScalarProperty Name="FECHATERMINO" ColumnName="FECHATERMINO" />
+                <ScalarProperty Name="ALUMNO" ColumnName="ALUMNO" />
+                <ScalarProperty Name="GARANTIA" ColumnName="GARANTIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUENTA">
+            <EntityTypeMapping TypeName="Model.CUENTA">
+              <MappingFragment StoreEntitySet="CUENTA">
+                <ScalarProperty Name="IDCUENTA" ColumnName="IDCUENTA" />
+                <ScalarProperty Name="CONEXION" ColumnName="CONEXION" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="CORREOELECTRONICO" ColumnName="CORREOELECTRONICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUENTAALUMNO">
+            <EntityTypeMapping TypeName="Model.CUENTAALUMNO">
+              <MappingFragment StoreEntitySet="CUENTAALUMNO">
+                <ScalarProperty Name="IDCUENTAALUMNOS" ColumnName="IDCUENTAALUMNOS" />
+                <ScalarProperty Name="CUPOTOTAL" ColumnName="CUPOTOTAL" />
+                <ScalarProperty Name="CUPOUTILIZADO" ColumnName="CUPOUTILIZADO" />
+                <ScalarProperty Name="TIPOCUENTA" ColumnName="TIPOCUENTA" />
+                <ScalarProperty Name="ALUMNO" ColumnName="ALUMNO" />
+                <ScalarProperty Name="APORTE" ColumnName="APORTE" />
+                <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUENTACURSO">
+            <EntityTypeMapping TypeName="Model.CUENTACURSO">
+              <MappingFragment StoreEntitySet="CUENTACURSO">
+                <ScalarProperty Name="IDCUENTACURSO" ColumnName="IDCUENTACURSO" />
+                <ScalarProperty Name="CURSO" ColumnName="CURSO" />
+                <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CURSO">
+            <EntityTypeMapping TypeName="Model.CURSO">
+              <MappingFragment StoreEntitySet="CURSO">
+                <ScalarProperty Name="IDCURSO" ColumnName="IDCURSO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="COLEGIO" ColumnName="COLEGIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DESTINO">
+            <EntityTypeMapping TypeName="Model.DESTINO">
+              <MappingFragment StoreEntitySet="DESTINO">
+                <ScalarProperty Name="IDDESTINO" ColumnName="IDDESTINO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADOCUENTA">
+            <EntityTypeMapping TypeName="Model.ESTADOCUENTA">
+              <MappingFragment StoreEntitySet="ESTADOCUENTA">
+                <ScalarProperty Name="IDESTADOCUENTA" ColumnName="IDESTADOCUENTA" />
+                <ScalarProperty Name="CUENTAALUMNO" ColumnName="CUENTAALUMNO" />
+                <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITINERARIO">
+            <EntityTypeMapping TypeName="Model.ITINERARIO">
+              <MappingFragment StoreEntitySet="ITINERARIO">
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="ORIGEN" ColumnName="ORIGEN" />
+                <ScalarProperty Name="ACTIVIDADVIAJE" ColumnName="ACTIVIDADVIAJE" />
+                <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
+                <ScalarProperty Name="FECHATERMINO" ColumnName="FECHATERMINO" />
+                <ScalarProperty Name="CONTRATO" ColumnName="CONTRATO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORIGEN">
+            <EntityTypeMapping TypeName="Model.ORIGEN">
+              <MappingFragment StoreEntitySet="ORIGEN">
+                <ScalarProperty Name="IDORIGEN" ColumnName="IDORIGEN" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAGO">
+            <EntityTypeMapping TypeName="Model.PAGO">
+              <MappingFragment StoreEntitySet="PAGO">
+                <ScalarProperty Name="IDPAGO" ColumnName="IDPAGO" />
+                <ScalarProperty Name="CUENTACURSO" ColumnName="CUENTACURSO" />
+                <ScalarProperty Name="FECHAPAGO" ColumnName="FECHAPAGO" />
+                <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+                <ScalarProperty Name="MONTOCANCELADO" ColumnName="MONTOCANCELADO" />
+                <ScalarProperty Name="TIPOPAGO" ColumnName="TIPOPAGO" />
+                <ScalarProperty Name="CUENTAALUMNO" ColumnName="CUENTAALUMNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAIS">
+            <EntityTypeMapping TypeName="Model.PAIS">
+              <MappingFragment StoreEntitySet="PAIS">
+                <ScalarProperty Name="IDPAIS" ColumnName="IDPAIS" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERMISO">
+            <EntityTypeMapping TypeName="Model.PERMISO">
+              <MappingFragment StoreEntitySet="PERMISO">
+                <ScalarProperty Name="IDPERMISO" ColumnName="IDPERMISO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGION">
+            <EntityTypeMapping TypeName="Model.REGION">
+              <MappingFragment StoreEntitySet="REGION">
+                <ScalarProperty Name="IDREGION" ColumnName="IDREGION" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICIO">
+            <EntityTypeMapping TypeName="Model.SERVICIO">
+              <MappingFragment StoreEntitySet="SERVICIO">
+                <ScalarProperty Name="IDSERVICIO" ColumnName="IDSERVICIO" />
+                <ScalarProperty Name="TIPOSERVICIO" ColumnName="TIPOSERVICIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOACTIVIDAD">
+            <EntityTypeMapping TypeName="Model.TIPOACTIVIDAD">
+              <MappingFragment StoreEntitySet="TIPOACTIVIDAD">
+                <ScalarProperty Name="IDTIPOACTIVIDAD" ColumnName="IDTIPOACTIVIDAD" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOACTIVIDADVIAJE">
+            <EntityTypeMapping TypeName="Model.TIPOACTIVIDADVIAJE">
+              <MappingFragment StoreEntitySet="TIPOACTIVIDADVIAJE">
+                <ScalarProperty Name="IDTIPOACTIVIDADVIAJE" ColumnName="IDTIPOACTIVIDADVIAJE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOCONTRATO">
+            <EntityTypeMapping TypeName="Model.TIPOCONTRATO">
+              <MappingFragment StoreEntitySet="TIPOCONTRATO">
+                <ScalarProperty Name="IDTIPOCONTRATO" ColumnName="IDTIPOCONTRATO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOCUENTA">
+            <EntityTypeMapping TypeName="Model.TIPOCUENTA">
+              <MappingFragment StoreEntitySet="TIPOCUENTA">
+                <ScalarProperty Name="IDTIPOCUENTA" ColumnName="IDTIPOCUENTA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOPAGO">
+            <EntityTypeMapping TypeName="Model.TIPOPAGO">
+              <MappingFragment StoreEntitySet="TIPOPAGO">
+                <ScalarProperty Name="IDTIPOPAGO" ColumnName="IDTIPOPAGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOSEGURO">
+            <EntityTypeMapping TypeName="Model.TIPOSEGURO">
+              <MappingFragment StoreEntitySet="TIPOSEGURO">
+                <ScalarProperty Name="IDTIPOSEGURO" ColumnName="IDTIPOSEGURO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ALUMNO">
+            <EntityTypeMapping TypeName="Model.ALUMNO">
+              <MappingFragment StoreEntitySet="ALUMNO">
+                <ScalarProperty Name="IDALUMNO" ColumnName="IDALUMNO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="APODERADO" ColumnName="APODERADO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CORREOELECTRONICO" ColumnName="CORREOELECTRONICO" />
+                <ScalarProperty Name="CURSO" ColumnName="CURSO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERFIL">
+            <EntityTypeMapping TypeName="Model.PERFIL">
+              <MappingFragment StoreEntitySet="PERFIL">
+                <ScalarProperty Name="IDPERFIL" ColumnName="IDPERFIL" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POLIZASEGURO">
+            <EntityTypeMapping TypeName="Model.POLIZASEGURO">
+              <MappingFragment StoreEntitySet="POLIZASEGURO">
+                <ScalarProperty Name="IDPOLIZASEGURO" ColumnName="IDPOLIZASEGURO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="TIPOSEGURO" ColumnName="TIPOSEGURO" />
+                <ScalarProperty Name="ASEGURADORA" ColumnName="ASEGURADORA" />
+                <ScalarProperty Name="ALUMNO" ColumnName="ALUMNO" />
+                <ScalarProperty Name="VIGENCIAINICIO" ColumnName="VIGENCIAINICIO" />
+                <ScalarProperty Name="VIGENCIATERMINO" ColumnName="VIGENCIATERMINO" />
+                <ScalarProperty Name="FECHACONTRATACION" ColumnName="FECHACONTRATACION" />
+                <ScalarProperty Name="MONTOASEGURADO" ColumnName="MONTOASEGURADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOSERVICIO">
+            <EntityTypeMapping TypeName="Model.TIPOSERVICIO">
+              <MappingFragment StoreEntitySet="TIPOSERVICIO">
+                <ScalarProperty Name="IDTIPOSERVICIO" ColumnName="IDTIPOSERVICIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

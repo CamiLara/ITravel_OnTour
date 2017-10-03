@@ -44,14 +44,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,6 +142,117 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ORM_OnTour\ACTIVIDAD.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ACTIVIDADAPORTES.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ACTIVIDADVIAJE.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ALUMNO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ANEXOS.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\APODERADO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ASEGURADORA.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\COLEGIO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\COMUNA.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\CONTRATO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\CUENTA.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\CUENTAALUMNO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\CUENTACURSO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\CURSO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\DESTINO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ESTADOCUENTA.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ITINERARIO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ModeloOnTour.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOnTour.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ModeloOnTour.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ModeloOnTour.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOnTour.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\ORIGEN.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\PAGO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\PAIS.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\PERFIL.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\PERMISO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\POLIZASEGURO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\REGION.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\SERVICIO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOACTIVIDAD.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOACTIVIDADVIAJE.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOCONTRATO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOCUENTA.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOPAGO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOSEGURO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORM_OnTour\TIPOSERVICIO.cs">
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,8 +262,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\ORM_OnTour\ModeloOnTour.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloOnTour.edmx</DependentUpon>
+      <LastGenOutput>ModeloOnTour.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ORM_OnTour\ModeloOnTour.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloOnTour.edmx</DependentUpon>
+      <LastGenOutput>ModeloOnTour.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ORM_OnTour\ModeloOnTour.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloOnTour.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ORM_OnTour\ModeloOnTour.edmx.diagram">
+      <DependentUpon>ModeloOnTour.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -164,7 +310,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -173,6 +318,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
