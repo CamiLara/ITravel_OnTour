@@ -28,34 +28,37 @@ namespace ITravel_OnTour.Models.ORM_OnTour
         public virtual DbSet<ACTIVIDAD> ACTIVIDAD { get; set; }
         public virtual DbSet<ACTIVIDADAPORTES> ACTIVIDADAPORTES { get; set; }
         public virtual DbSet<ACTIVIDADVIAJE> ACTIVIDADVIAJE { get; set; }
+        public virtual DbSet<ALUMNO> ALUMNO { get; set; }
         public virtual DbSet<ANEXOS> ANEXOS { get; set; }
         public virtual DbSet<APODERADO> APODERADO { get; set; }
         public virtual DbSet<ASEGURADORA> ASEGURADORA { get; set; }
+        public virtual DbSet<COLABORADOR> COLABORADOR { get; set; }
         public virtual DbSet<COLEGIO> COLEGIO { get; set; }
         public virtual DbSet<COMUNA> COMUNA { get; set; }
         public virtual DbSet<CONTRATO> CONTRATO { get; set; }
-        public virtual DbSet<CUENTA> CUENTA { get; set; }
         public virtual DbSet<CUENTAALUMNO> CUENTAALUMNO { get; set; }
         public virtual DbSet<CUENTACURSO> CUENTACURSO { get; set; }
+        public virtual DbSet<CUENTAUSUARIO> CUENTAUSUARIO { get; set; }
         public virtual DbSet<CURSO> CURSO { get; set; }
         public virtual DbSet<DESTINO> DESTINO { get; set; }
         public virtual DbSet<ESTADOCUENTA> ESTADOCUENTA { get; set; }
         public virtual DbSet<ITINERARIO> ITINERARIO { get; set; }
+        public virtual DbSet<MENU> MENU { get; set; }
         public virtual DbSet<ORIGEN> ORIGEN { get; set; }
         public virtual DbSet<PAGO> PAGO { get; set; }
         public virtual DbSet<PAIS> PAIS { get; set; }
+        public virtual DbSet<PERFIL> PERFIL { get; set; }
         public virtual DbSet<PERMISO> PERMISO { get; set; }
+        public virtual DbSet<POLIZASEGURO> POLIZASEGURO { get; set; }
         public virtual DbSet<REGION> REGION { get; set; }
         public virtual DbSet<SERVICIO> SERVICIO { get; set; }
         public virtual DbSet<TIPOACTIVIDAD> TIPOACTIVIDAD { get; set; }
         public virtual DbSet<TIPOACTIVIDADVIAJE> TIPOACTIVIDADVIAJE { get; set; }
+        public virtual DbSet<TIPOCOLABORADOR> TIPOCOLABORADOR { get; set; }
         public virtual DbSet<TIPOCONTRATO> TIPOCONTRATO { get; set; }
         public virtual DbSet<TIPOCUENTA> TIPOCUENTA { get; set; }
         public virtual DbSet<TIPOPAGO> TIPOPAGO { get; set; }
         public virtual DbSet<TIPOSEGURO> TIPOSEGURO { get; set; }
-        public virtual DbSet<ALUMNO> ALUMNO { get; set; }
-        public virtual DbSet<PERFIL> PERFIL { get; set; }
-        public virtual DbSet<POLIZASEGURO> POLIZASEGURO { get; set; }
         public virtual DbSet<TIPOSERVICIO> TIPOSERVICIO { get; set; }
     }
 }

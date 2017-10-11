@@ -142,64 +142,61 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ACTIVIDAD.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ACTIVIDADAPORTES.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ACTIVIDADVIAJE.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ALUMNO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ANEXOS.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\APODERADO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ASEGURADORA.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\COLABORADOR.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\COLEGIO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\COMUNA.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\CONTRATO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ORM_OnTour\CUENTA.cs">
       <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\CUENTAALUMNO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\CUENTACURSO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\CUENTAUSUARIO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\CURSO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\DESTINO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ESTADOCUENTA.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ITINERARIO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\MENU.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\ModeloOnTour.Context.cs">
       <AutoGen>True</AutoGen>
@@ -216,68 +213,53 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloOnTour.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ORM_OnTour\ModeloPrueba.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloPrueba.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ORM_OnTour\ModeloPrueba.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ORM_OnTour\ModeloPrueba.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloPrueba.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ORM_OnTour\ORIGEN.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\PAGO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\PAIS.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\PERFIL.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\PERMISO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\POLIZASEGURO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\REGION.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\SERVICIO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOACTIVIDAD.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOACTIVIDADVIAJE.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOCOLABORADOR.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOCONTRATO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOCUENTA.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOPAGO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOSEGURO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ORM_OnTour\TIPOSERVICIO.cs">
-      <DependentUpon>ModeloPrueba.tt</DependentUpon>
+      <DependentUpon>ModeloOnTour.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -344,16 +326,6 @@
       <DependentUpon>ModeloOnTour.edmx</DependentUpon>
       <LastGenOutput>ModeloOnTour.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ORM_OnTour\ModeloPrueba.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloPrueba.edmx</DependentUpon>
-      <LastGenOutput>ModeloPrueba.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ORM_OnTour\ModeloPrueba.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloPrueba.edmx</DependentUpon>
-      <LastGenOutput>ModeloPrueba.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\ORM_OnTour\ModeloOnTour.edmx">
@@ -413,13 +385,6 @@
     <Content Include="Content\vendor\font-awesome\scss\_screen-reader.scss" />
     <Content Include="Content\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\vendor\font-awesome\scss\_variables.scss" />
-    <EntityDeploy Include="Models\ORM_OnTour\ModeloPrueba.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloPrueba.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ORM_OnTour\ModeloPrueba.edmx.diagram">
-      <DependentUpon>ModeloPrueba.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />

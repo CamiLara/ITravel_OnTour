@@ -14,9 +14,9 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class ACTIVIDADAPORTES
     {
-        public decimal IDACTIVIDADAPORTES { get; set; }
         public decimal IDACTIVIDAD { get; set; }
         public decimal IDCUENTAALUMNOS { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
         public Nullable<decimal> MONTO { get; set; }
     
         public virtual ACTIVIDAD ACTIVIDAD { get; set; }
