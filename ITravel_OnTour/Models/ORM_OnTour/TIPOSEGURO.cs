@@ -14,8 +14,17 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class TIPOSEGURO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPOSEGURO()
+        {
+            this.POLIZASEGURO = new HashSet<POLIZASEGURO>();
+        }
+    
         public decimal IDTIPOSEGURO { get; set; }
         public string NOMBRE { get; set; }
         public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<POLIZASEGURO> POLIZASEGURO { get; set; }
     }
 }

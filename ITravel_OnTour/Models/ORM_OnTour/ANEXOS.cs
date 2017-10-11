@@ -15,8 +15,10 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     public partial class ANEXOS
     {
         public decimal IDANEXO { get; set; }
+        public decimal IDCONTRATO { get; set; }
         public string File { get; set; }
-        public decimal CONTRATO { get; set; }
         public string TOKEN { get; set; }
+    
+        public virtual CONTRATO CONTRATO { get; set; }
     }
 }

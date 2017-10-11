@@ -15,11 +15,15 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     public partial class PAGO
     {
         public decimal IDPAGO { get; set; }
-        public decimal CUENTACURSO { get; set; }
+        public decimal IDTIPOPAGO { get; set; }
+        public decimal IDCUENTACURSO { get; set; }
+        public decimal IDCUENTAALUMNO { get; set; }
         public Nullable<System.DateTime> FECHAPAGO { get; set; }
         public string DETALLE { get; set; }
-        public string MONTOCANCELADO { get; set; }
-        public decimal TIPOPAGO { get; set; }
-        public decimal CUENTAALUMNO { get; set; }
+        public Nullable<decimal> MONTOCANCELADO { get; set; }
+    
+        public virtual CUENTAALUMNO CUENTAALUMNO { get; set; }
+        public virtual CUENTACURSO CUENTACURSO { get; set; }
+        public virtual TIPOPAGO TIPOPAGO { get; set; }
     }
 }

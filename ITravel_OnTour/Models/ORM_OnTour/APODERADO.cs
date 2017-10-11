@@ -14,11 +14,20 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class APODERADO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public APODERADO()
+        {
+            this.ALUMNO = new HashSet<ALUMNO>();
+        }
+    
         public decimal IDAPODERADO { get; set; }
         public string NOMBRE { get; set; }
         public string RUT { get; set; }
         public string DIRECCION { get; set; }
         public Nullable<decimal> TELEFONO { get; set; }
         public string CELULAR { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ALUMNO> ALUMNO { get; set; }
     }
 }

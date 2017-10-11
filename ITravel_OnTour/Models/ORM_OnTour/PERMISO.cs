@@ -15,8 +15,10 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     public partial class PERMISO
     {
         public decimal IDPERMISO { get; set; }
+        public decimal IDPERFIL { get; set; }
         public string NOMBRE { get; set; }
         public string DESCRIPCION { get; set; }
-        public decimal PERFIL { get; set; }
+    
+        public virtual PERFIL PERFIL { get; set; }
     }
 }

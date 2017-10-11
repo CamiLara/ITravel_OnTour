@@ -14,7 +14,22 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class PAIS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PAIS()
+        {
+            this.DESTINO = new HashSet<DESTINO>();
+            this.ORIGEN = new HashSet<ORIGEN>();
+            this.REGION = new HashSet<REGION>();
+        }
+    
         public decimal IDPAIS { get; set; }
         public string NOMBRE { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DESTINO> DESTINO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORIGEN> ORIGEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REGION> REGION { get; set; }
     }
 }

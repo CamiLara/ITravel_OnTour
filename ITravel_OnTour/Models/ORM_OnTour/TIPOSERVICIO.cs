@@ -14,8 +14,17 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class TIPOSERVICIO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPOSERVICIO()
+        {
+            this.SERVICIO = new HashSet<SERVICIO>();
+        }
+    
         public decimal IDTIPOSERVICIO { get; set; }
         public string NOMBRE { get; set; }
         public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SERVICIO> SERVICIO { get; set; }
     }
 }

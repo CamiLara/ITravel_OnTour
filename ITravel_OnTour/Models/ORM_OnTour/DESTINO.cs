@@ -14,8 +14,18 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class DESTINO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DESTINO()
+        {
+            this.ITINERARIO = new HashSet<ITINERARIO>();
+        }
+    
         public decimal IDDESTINO { get; set; }
-        public string NOMBRE { get; set; }
-        public decimal PAIS { get; set; }
+        public string NOMBREDESTINO { get; set; }
+        public decimal IDPAIS { get; set; }
+    
+        public virtual PAIS PAIS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ITINERARIO> ITINERARIO { get; set; }
     }
 }

@@ -14,8 +14,25 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class CURSO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CURSO()
+        {
+            this.ACTIVIDAD = new HashSet<ACTIVIDAD>();
+            this.ALUMNO = new HashSet<ALUMNO>();
+            this.CUENTACURSO = new HashSet<CUENTACURSO>();
+        }
+    
         public decimal IDCURSO { get; set; }
+        public decimal IDCOLEGIO { get; set; }
         public string NOMBRE { get; set; }
-        public decimal COLEGIO { get; set; }
+        public Nullable<decimal> NIVEL { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ACTIVIDAD> ACTIVIDAD { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ALUMNO> ALUMNO { get; set; }
+        public virtual COLEGIO COLEGIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUENTACURSO> CUENTACURSO { get; set; }
     }
 }

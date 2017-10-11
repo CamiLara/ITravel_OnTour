@@ -14,8 +14,18 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class CUENTACURSO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CUENTACURSO()
+        {
+            this.PAGO = new HashSet<PAGO>();
+        }
+    
         public decimal IDCUENTACURSO { get; set; }
-        public decimal CURSO { get; set; }
+        public decimal IDCURSO { get; set; }
         public Nullable<decimal> SALDO { get; set; }
+    
+        public virtual CURSO CURSO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PAGO> PAGO { get; set; }
     }
 }

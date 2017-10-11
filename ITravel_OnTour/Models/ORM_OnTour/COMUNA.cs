@@ -14,8 +14,18 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class COMUNA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public COMUNA()
+        {
+            this.COLEGIO = new HashSet<COLEGIO>();
+        }
+    
         public decimal IDCOMUNA { get; set; }
         public string NOMBRE { get; set; }
-        public decimal REGION { get; set; }
+        public decimal IDREGION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<COLEGIO> COLEGIO { get; set; }
+        public virtual REGION REGION { get; set; }
     }
 }

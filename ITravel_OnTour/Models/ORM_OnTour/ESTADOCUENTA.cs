@@ -14,8 +14,10 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class ESTADOCUENTA
     {
-        public decimal IDESTADOCUENTA { get; set; }
-        public decimal CUENTAALUMNO { get; set; }
+        public decimal ID { get; set; }
+        public decimal IDCUENTAALUMNO { get; set; }
         public string DETALLE { get; set; }
+    
+        public virtual CUENTAALUMNO CUENTAALUMNO { get; set; }
     }
 }

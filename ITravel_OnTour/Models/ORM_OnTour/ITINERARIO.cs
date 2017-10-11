@@ -14,11 +14,16 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class ITINERARIO
     {
-        public decimal DESTINO { get; set; }
-        public decimal ORIGEN { get; set; }
-        public decimal ACTIVIDADVIAJE { get; set; }
+        public decimal IDDESTINO { get; set; }
+        public decimal IDORIGEN { get; set; }
+        public decimal IDACTIVIDADVIAJE { get; set; }
         public Nullable<System.DateTime> FECHAINICIO { get; set; }
         public Nullable<System.DateTime> FECHATERMINO { get; set; }
-        public decimal CONTRATO { get; set; }
+        public decimal IDCONTRATO { get; set; }
+    
+        public virtual ACTIVIDADVIAJE ACTIVIDADVIAJE { get; set; }
+        public virtual CONTRATO CONTRATO { get; set; }
+        public virtual DESTINO DESTINO { get; set; }
+        public virtual ORIGEN ORIGEN { get; set; }
     }
 }

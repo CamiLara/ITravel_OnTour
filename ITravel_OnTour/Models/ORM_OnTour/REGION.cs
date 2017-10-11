@@ -14,8 +14,18 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class REGION
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public REGION()
+        {
+            this.COMUNA = new HashSet<COMUNA>();
+        }
+    
         public decimal IDREGION { get; set; }
         public string NOMBRE { get; set; }
-        public decimal PAIS { get; set; }
+        public decimal IDPAIS { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<COMUNA> COMUNA { get; set; }
+        public virtual PAIS PAIS { get; set; }
     }
 }

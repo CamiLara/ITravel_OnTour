@@ -14,7 +14,16 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class TIPOCUENTA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPOCUENTA()
+        {
+            this.CUENTAALUMNO = new HashSet<CUENTAALUMNO>();
+        }
+    
         public decimal IDTIPOCUENTA { get; set; }
         public string NOMBRE { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUENTAALUMNO> CUENTAALUMNO { get; set; }
     }
 }

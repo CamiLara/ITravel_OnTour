@@ -14,7 +14,16 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class TIPOPAGO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPOPAGO()
+        {
+            this.PAGO = new HashSet<PAGO>();
+        }
+    
         public decimal IDTIPOPAGO { get; set; }
         public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PAGO> PAGO { get; set; }
     }
 }

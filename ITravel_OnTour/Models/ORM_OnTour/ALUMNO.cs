@@ -14,12 +14,29 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class ALUMNO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ALUMNO()
+        {
+            this.CONTRATO = new HashSet<CONTRATO>();
+            this.CUENTAALUMNO = new HashSet<CUENTAALUMNO>();
+            this.POLIZASEGURO = new HashSet<POLIZASEGURO>();
+        }
+    
         public decimal IDALUMNO { get; set; }
+        public decimal IDAPODERADO { get; set; }
+        public decimal IDCURSO { get; set; }
         public string NOMBRE { get; set; }
-        public string DIRECCION { get; set; }
-        public decimal APODERADO { get; set; }
+        public string DIRECCIÓN { get; set; }
         public Nullable<decimal> TELEFONO { get; set; }
         public string CORREOELECTRONICO { get; set; }
-        public decimal CURSO { get; set; }
+    
+        public virtual APODERADO APODERADO { get; set; }
+        public virtual CURSO CURSO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTRATO> CONTRATO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUENTAALUMNO> CUENTAALUMNO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<POLIZASEGURO> POLIZASEGURO { get; set; }
     }
 }

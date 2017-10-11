@@ -14,11 +14,21 @@ namespace ITravel_OnTour.Models.ORM_OnTour
     
     public partial class ACTIVIDADVIAJE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ACTIVIDADVIAJE()
+        {
+            this.ITINERARIO = new HashSet<ITINERARIO>();
+        }
+    
         public decimal IDACTIVIDADVIAJE { get; set; }
         public string NOMBRE { get; set; }
         public string DESCRIPCION { get; set; }
         public Nullable<System.DateTime> FECHAINICIO { get; set; }
         public Nullable<System.DateTime> FECHATERMINO { get; set; }
-        public decimal TIPOACTIVIDADVIAJE { get; set; }
+        public decimal IDTIPOACTIVIDADVIAJE { get; set; }
+    
+        public virtual TIPOACTIVIDADVIAJE TIPOACTIVIDADVIAJE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ITINERARIO> ITINERARIO { get; set; }
     }
 }
