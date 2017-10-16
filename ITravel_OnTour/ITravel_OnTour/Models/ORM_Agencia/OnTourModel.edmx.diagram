@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="291a9af6fdf84b538754ee63d0df50e8" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACTIVIDAD" Width="1.5" PointX="17.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ACTIVIDADAPORTES" Width="1.5" PointX="19.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ACTIVIDADVIAJE" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ALUMNO" Width="1.5" PointX="12" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ANEXOS" Width="1.5" PointX="16.5" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.APODERADO" Width="1.5" PointX="9.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ASEGURADORA" Width="1.5" PointX="15" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COLABORADOR" Width="1.5" PointX="12" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COLEGIO" Width="1.5" PointX="7.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMUNA" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CONTRATO" Width="1.5" PointX="14.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUENTAALUMNO" Width="1.5" PointX="17.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUENTACURSO" Width="1.5" PointX="12" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUENTAUSUARIO" Width="1.5" PointX="9.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CURSO" Width="1.5" PointX="9.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DESTINO" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADOCUENTA" Width="1.5" PointX="19.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITINERARIO" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MENU" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORIGEN" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAGO" Width="1.5" PointX="22.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAIS" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PERFIL" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PERMISO" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.POLIZASEGURO" Width="1.5" PointX="17.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.REGION" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SERVICIO" Width="1.5" PointX="12" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOACTIVIDAD" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOACTIVIDADVIAJE" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOCOLABORADOR" Width="1.5" PointX="9.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOCONTRATO" Width="1.5" PointX="12" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOCUENTA" Width="1.5" PointX="15" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOPAGO" Width="1.5" PointX="20.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOSEGURO" Width="1.5" PointX="15" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOSERVICIO" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.ACTIVIDADAPORTES_ACTIVIDAD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ACTIVIDADAPORTES_CUENTAALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ACTIVIDADVIAJE_TIPOACTIVIDADVIAJE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ITINERARIO_ACTIVIDADVIAJE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ALUMNO_APODERADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ALUMNO_CURSO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CONTRATO_ALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CUENTAALUMNO_ALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.POLIZASEGURO_ALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ANEXOS_CONTRATO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.POLIZASEGURO_ASEGURADORA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COLABORADOR_TIPOCOLABORADOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COLABORADOR_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CONTRATO_COLABORADOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COLEGIO_COMUNA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CURSO_COLEGIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COMUNA_REGION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CONTRATO_POLIZASEGURO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CONTRATO_POLIZASEGUROS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CONTRATO_SERVICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ITINERARIO_CONTRATO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CUENTAALUMNO_TIPOCUENTA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ESTADOCUENTA_CUENTAALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PAGO_CUENTAALUMNO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CUENTACURSO_CURSO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PAGO_CUENTACURSO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CUENTAUSUARIO_PERFIL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DESTINO_PAIS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ITINERARIO_DESTINO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ITINERARIO_ORIGEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.MENU_PERFIL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ORIGEN_PAIS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PAGO_TIPOPAGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.REGION_PAIS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PERMISO_PERFIL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.POLIZASEGURO_TIPOSEGURO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SERVICIOS_TIPOSERVICIOS_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
