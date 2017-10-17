@@ -15,10 +15,10 @@
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    @Html.LabelFor(m => m.Usuario, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
@@ -42,11 +42,11 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("¿No tienes cuenta?, Crea una cuenta nueva!", "Register")
+                    @Html.ActionLink("Si no tienes cuenta, regístrate!, es gratis.", "Register")
                 </p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        @Html.ActionLink("Olvidé mi contraseña", "ForgotPassword")
                     </p>*@
             }
         </section>

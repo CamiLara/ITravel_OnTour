@@ -49,13 +49,13 @@ namespace ITravel_OnTour.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "Usuario")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Usuario { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Contraseña")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -64,6 +64,7 @@ namespace ITravel_OnTour.Models
 
     public class RegisterViewModel
     {
+        //datos apoderado
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [Display(Name = "Nombres")]
@@ -109,6 +110,42 @@ namespace ITravel_OnTour.Models
         [Display(Name = "Reingresa Contraseña")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //datos alumno
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Nombres Alumno")]
+        public string NombresAlumno { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Apellidos Alumno")]
+        public string ApellidosAlumno { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Rut Alumno")]
+        public string RutAlumno { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Curso")]
+        public string Curso { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Región Colegio")]
+        public string RegionColegio { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Comuna Colegio")]
+        public string ComunaColegio { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Colegio")]
+        public string Colegio { get; set; }
     }
 
     public class ResetPasswordViewModel
